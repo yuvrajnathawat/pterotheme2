@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Pterodactyl\Http\Controllers\Api\Client\Rolexdev\Billing\BillingController;
+use Pterodactyl\Http\Controllers\Api\Public\LicenseController;
 use Pterodactyl\Http\Controllers\Base;
 use Pterodactyl\Http\Middleware\RequireTwoFactorAuthentication;
 
@@ -18,6 +19,12 @@ Route::get('/api/public/eggs', [\Pterodactyl\Http\Controllers\Api\PublicEggContr
     ->withoutMiddleware(['auth', RequireTwoFactorAuthentication::class])
     ->middleware('throttle:30,1')
     ->name('api.public.eggs');
+
+// License verification — always returns valid (no license required)
+Route::get('/api/public/license/verify', [LicenseController::class, 'verify'])
+    ->withoutMiddleware(['auth', RequireTwoFactorAuthentication::class])
+    ->middleware('throttle:60,1')
+    ->name('api.public.license.verify');
 
 Route::get('/theme/hyperv1', [Base\HyperV1ThemePublicController::class, 'show'])
     ->withoutMiddleware(['auth', RequireTwoFactorAuthentication::class]);
