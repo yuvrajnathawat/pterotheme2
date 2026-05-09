@@ -1,0 +1,2 @@
+import{Zd as B}from"/assets/entry.3zr04ts5.js";import{ef as A}from"/assets/entry.xjehe85a.js";import{Qj as k}from"/assets/entry.fqyvsr1c.js";var H=async(j,q)=>{await k.put(`/api/client/servers/${j}/settings/docker-image`,{docker_image:q})};var N=(j,q,C)=>B([j,"/startup"],async()=>{let{data:z}=await k.get(`/api/client/servers/${j}/startup`);return{variables:(z.data||[]).map(A),invocation:z.meta.startup_command,dockerImages:z.meta.docker_images||{}}},{initialData:q||void 0,errorRetryCount:3,...C||{}});
+export{H as Ud,N as Vd};

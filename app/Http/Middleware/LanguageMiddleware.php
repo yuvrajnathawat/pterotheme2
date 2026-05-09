@@ -1,0 +1,36 @@
+<?php
+namespace Pterodactyl\Http\Middleware;
+
+use Closure;
+
+use Throwable;
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Application;
+use Pterodactyl\Repositories\Eloquent\SettingsRepository;
+class LanguageMiddleware
+{
+    public function __construct(private Application $app)
+    {
+    }
+    public function handle(Request $request, Closure $next): mixed
+    {
+        $locale = $this->getDefaultLocale();
+        if ($request->user() && $request->user()->language) {
+            $locale = $request->user()->language;
+        } elseif ($request->session()->get('locale')) {
+            $locale = $request->session()->get('locale');
+        }
+        $this->app->setLocale($locale);
+        return $next($request);
+    }
+    private function getDefaultLocale(): string
+    {
+        try {
+            $settingsRepository = app(SettingsRepository::class);
+            $addonConfig = json_decode($settingsRepository->get('settings::app:addons:hyperv1', '{}'), true);
+            return $addonConfig['addons']['LanguageTranslations']['defaultLanguage'] ?? 'en';
+        } catch (Throwable $e) {
+            return 'en';
+        }
+    }
+}

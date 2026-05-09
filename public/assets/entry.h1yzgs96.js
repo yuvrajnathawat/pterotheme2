@@ -1,0 +1,2 @@
+import{ae as H}from"/assets/entry.ygcrvk10.js";import{hf as N}from"/assets/entry.rktg5ved.js";import{Zk as w,_k as z}from"/assets/entry.jvjvcmey.js";import{cl as M}from"/assets/entry.d5x3f9ta.js";import{dl as G}from"/assets/entry.90252mjk.js";var I=G(M(),1);var J=G(N(),1);var Q=({action:K,matchAny:B=!1,renderOnError:D,children:L})=>{let b=H(K);if(!b||b.length===0)return z(w,{children:D});return z(w,{children:B&&b.filter((k)=>k).length>0||!B&&b.every((k)=>k)?L:D})},T=I.memo(Q,J.default);
+export{T as $d};

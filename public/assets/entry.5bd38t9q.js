@@ -1,0 +1,16 @@
+import{qb as V}from"/assets/entry.xqhn1h0d.js";import{Wc as L}from"/assets/entry.k2by8kq9.js";import{Jd as F,Pd as I,td as _}from"/assets/entry.re7418dy.js";import{Bf as G,Df as U,Ff as X}from"/assets/entry.fqyvsr1c.js";import{Fk as W,Mk as b,Nk as D,Ok as E}from"/assets/entry.va1026yc.js";import{Vk as z}from"/assets/entry.8a8srtdn.js";import{$k as Q,_k as q}from"/assets/entry.jvjvcmey.js";import{cl as v}from"/assets/entry.d5x3f9ta.js";import{dl as g}from"/assets/entry.90252mjk.js";var $=g(v(),1);var k=U`
+    to { transform: rotate(360deg) }
+`,R=G(X)`
+    &.hover\\:spin:hover {
+        animation: ${k} 2s linear infinite;
+    }
+`,h=G.h2.attrs({className:"mt-6 font-bold text-3xl"})``,j=G.p.attrs({className:"text-sm mt-3 leading-relaxed"})``,y=G.div.attrs({className:"mx-auto flex items-center justify-center"})`
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    background: rgba(var(--hyper-primary-rgb), 0.1);
+    color: var(--hyper-primary);
+    backdrop-filter: blur(16px);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 10px 24px rgba(0, 0, 0, 0.3);
+`,d=G.div.attrs({className:"mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"})``,M=({title:H,message:J,onBack:N,onRetry:Y,variant:Z,extraActions:w})=>{let O=typeof Y==="function",f=Z==="notfound"?E:b,m=z("common.back","Back"),x=z("common.goHome","Go Home"),u=z("common.tryAgain","Try Again"),C=z("common.retry","Retry"),[S,T]=$.default.useState(_),K=F(S??void 0);$.default.useEffect(()=>{let P=()=>{T(_())};return window.addEventListener("hyperv1:theme-updated",P),()=>{window.removeEventListener("hyperv1:theme-updated",P)}},[]);let A=()=>{window.location.href="/"},p=()=>{if(Y)return Y();window.location.reload()},c=()=>{window.location.href="/"},B=()=>{if(K.contact&&K.contact.trim()!=="")window.open(K.contact,"_blank","noopener,noreferrer")};return q(I,{children:q("div",{className:"flex justify-center text-hyper-foreground",children:Q(L,{className:"w-full sm:w-3/4 md:w-1/2 p-10 md:p-14 shadow-[0_16px_40px_rgba(0,0,0,0.35)]",borderGlow:!0,glowColor:"var(--hyper-primary)",hoverAnimation:!1,children:[q("div",{className:"absolute left-0 top-0 ml-4 mt-4",children:q(R,{onClick:A,isSecondary:!0,color:"grey","aria-label":z("common.goHome","Go Home"),title:z("common.goHome","Go Home"),className:"rounded-lg w-9 h-9 flex items-center justify-center p-0",children:q(V,{icon:D})})}),q(y,{variant:Z,children:q(V,{size:"2x",icon:f})}),q(h,{className:"text-hyper-primary text-center",children:H}),q(j,{className:"text-hyper-muted-foreground",children:J}),Q(d,{children:[Z!=="notfound"&&q(X,{size:"small",isSecondary:!0,onClick:p,className:O?"button-primary":"",children:Q("span",{className:`inline-flex items-center gap-2 ${O?"":""}`,children:[q(V,{icon:W,className:O?"animate-spin-slow":""}),q("span",{children:O?u:C})]})}),K.contact&&K.contact.trim()!==""&&q(X,{size:"small",onClick:B,className:"button-primary",children:z("common.contactUs","Contact us")}),w]})]})})})},e=({title:H,...J})=>q(M,{variant:"error",title:H||"Something went wrong",...J}),qq=({title:H,message:J,onBack:N})=>q(M,{variant:"notfound",title:H||"404",message:J||"The requested resource was not found.",onBack:N});var Gq=M;
+export{e as Ma,qq as Na,Gq as Oa};

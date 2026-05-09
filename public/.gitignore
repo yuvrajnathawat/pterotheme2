@@ -1,0 +1,3 @@
+# compiled assets are committed so the installer works without a build step
+!assets/svgs
+!assets/svgs/*.svg
